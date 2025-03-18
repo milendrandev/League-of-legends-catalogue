@@ -1,8 +1,8 @@
 {
     "2ebebdea-86c5-42e9-99c3-f5dce65575b9": {
         "title": "Brand",
-        "cover-image-url": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/brandloadscreen.jpg",
-        "character-image-url": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/images/brand_splash_tile_0.jpg",
+        "coverImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/brandloadscreen.jpg",
+        "characterImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/images/brand_splash_tile_0.jpg",
         "story": "Once a tribesman of the icy Freljord named Kegan Rodhe, the creature known as Brand is a lesson in the temptation of greater power.",
         "_id": "2ebebdea-86c5-42e9-99c3-f5dce65575b9"
     }

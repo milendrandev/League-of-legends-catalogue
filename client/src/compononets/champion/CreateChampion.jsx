@@ -49,16 +49,16 @@ export default function CreateChampion() {
 
                 <div className="signin">
                     <div className="content">
-                        <h2>Sign Up</h2>
+                        <h2>Champion</h2>
                         <div className="form">
                             <div className="inputBox">
                                 <input type="text" name="title" required /> <i>Champion Name</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="cover-image-url" required /> <i>Cover Image Url</i>
+                                <input type="text" name="coverImageUrl" required /> <i>Cover Image Url</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="character-image-url" required /> <i>Character Image Url</i>
+                                <input type="text" name="characterImageUrl" required /> <i>Character Image Url</i>
                             </div>
                             <div className="inputBox">
                                 <textarea name="story" required /> <i>Lore Story</i>

@@ -1,29 +1,21 @@
-import { Link } from "react-router";
+
+import CatalogueItem from "./CatalogueItem";
+import useFetch from "../../hooks/useFetch";
 
 export default function AllChampionsCatalogue() {
+    const baseUrl = 'http://localhost:3030/jsonstore/champions';
+    const [champions] = useFetch(baseUrl);
+
     return (
         <>
             <div className='container'>
 
-                <Link to="/">
-                    <div className="card">
-                        <div className="wrapper">
-                            <img src="https://i.imgur.com/4TbSuck.jpeg" className="cover-image" />
-                        </div>
-                        <p className='title'>Ahri</p>
-                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/base/images/ahri_splash_tile_0.jpg" className="character" />
-                    </div>
-                </Link>
-                <Link to="/">
-                    <div className="card">
-                        <div className="wrapper">
-                            <img src="https://i.imgur.com/mM60cNg.jpeg" className="cover-image" />
-                        </div>
-                        <p className='title'>Aatrox</p>
-                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aatrox/skins/base/images/aatrox_splash_tile_0.jpg" className="character" />
-                    </div>
-                </Link>
-
+                {champions.map(champ =>
+                    <CatalogueItem
+                        key={champ._id}
+                        {...champ}
+                    />
+                )}
 
             </div>
         </>
