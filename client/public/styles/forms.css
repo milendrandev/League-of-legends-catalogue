@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-form 
-{
+form {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -12,28 +11,27 @@ form
   flex-wrap: wrap;
   overflow: hidden;
 }
-form::before 
-{
+
+form::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000,#0f0,#000);
+  background: linear-gradient(#000, #0f0, #000);
   animation: animate 5s linear infinite;
 }
-@keyframes animate 
-{
-  0%
-  {
+
+@keyframes animate {
+  0% {
     transform: translateY(-100%);
   }
-  100%
-  {
+
+  100% {
     transform: translateY(100%);
   }
 }
-form span 
-{
+
+form span {
   position: relative;
   display: block;
   width: calc(6.25vw - 2px);
@@ -42,27 +40,26 @@ form span
   z-index: 2;
   transition: 1.5s;
 }
-form span:hover 
-{
+
+form span:hover {
   background: #0f0;
   transition: 0s;
 }
 
-form .signin
-{
+form .signin {
   position: absolute;
   width: 400px;
-  background: #222;  
+  background: #222;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
   border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0,0,0,9);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
 }
-form .signin .content 
-{
+
+form .signin .content {
   position: relative;
   width: 100%;
   display: flex;
@@ -71,26 +68,27 @@ form .signin .content
   flex-direction: column;
   gap: 40px;
 }
-form .signin .content h2 
-{
+
+form .signin .content h2 {
   font-size: 2em;
   color: #0f0;
   text-transform: uppercase;
 }
-form .signin .content .form 
-{
+
+form .signin .content .form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-form .signin .content .form .inputBox
-{
+
+form .signin .content .form .inputBox {
   position: relative;
   width: 100%;
 }
-form .signin .content .form .inputBox input 
-{
+
+form .signin .content .form .inputBox input,
+textarea {
   position: relative;
   width: 100%;
   background: #333;
@@ -102,8 +100,12 @@ form .signin .content .form .inputBox input
   font-weight: 500;
   font-size: 1em;
 }
-form .signin .content .form .inputBox i 
-{
+
+textarea {
+  resize: vertical;
+}
+
+form .signin .content .form .inputBox i {
   position: absolute;
   left: 0;
   padding: 15px 10px;
@@ -112,32 +114,34 @@ form .signin .content .form .inputBox i
   transition: 0.5s;
   pointer-events: none;
 }
-.signin .content .form .inputBox input:focus ~ i,
-.signin .content .form .inputBox input:valid ~ i
-{
+
+.signin .content .form .inputBox input:focus~i,
+.signin .content .form .inputBox input:valid~i,
+.signin .content .form .inputBox textarea:focus~i,
+.signin .content .form .inputBox textarea:valid~i {
   transform: translateY(-7.5px);
   font-size: 0.8em;
   color: #fff;
 }
-.signin .content .form .links 
-{
+
+.signin .content .form .links {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.signin .content .form .links a 
-{
+
+.signin .content .form .links a {
   color: #fff;
   text-decoration: none;
 }
-.signin .content .form .links a:nth-child(2)
-{
+
+.signin .content .form .links a:nth-child(2) {
   color: #0f0;
   font-weight: 600;
 }
-.signin .content .form .inputBox input[type="submit"]
-{
+
+.signin .content .form .inputBox input[type="submit"] {
   padding: 10px;
   background: #0f0;
   color: #000;
@@ -146,22 +150,20 @@ form .signin .content .form .inputBox i
   letter-spacing: 0.05em;
   cursor: pointer;
 }
-input[type="submit"]:active
-{
+
+input[type="submit"]:active {
   opacity: 0.6;
 }
-@media (max-width: 900px)
-{
-  form span 
-  {
+
+@media (max-width: 900px) {
+  form span {
     width: calc(10vw - 2px);
     height: calc(10vw - 2px);
   }
 }
-@media (max-width: 600px)
-{
-  form span 
-  {
+
+@media (max-width: 600px) {
+  form span {
     width: calc(20vw - 2px);
     height: calc(20vw - 2px);
   }
