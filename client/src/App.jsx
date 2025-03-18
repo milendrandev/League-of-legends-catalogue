@@ -3,11 +3,14 @@ import Home from "./compononets/Home"
 import AllChampionsCatalogue from "./compononets/champion/AllChampionsCatalogue"
 import Login from "./compononets/Authentication/Login"
 import Register from "./compononets/Authentication/Register"
+import Header from "./compononets/Header"
 
 function App() {
 
   return (
     <>
+      <Header />
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>

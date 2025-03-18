@@ -3,7 +3,6 @@
     margin: 5em 2em;
     gap: 2em;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .card {

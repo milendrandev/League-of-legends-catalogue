@@ -1,0 +1,28 @@
+.menu {
+    margin: 1em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list {
+    display: flex;
+    text-decoration: none;
+    gap: 1em;
+    list-style-type: none;
+    font-size: 20px;
+    margin-right: 1em;
+}
+
+.list li a{
+    color: red;
+}
+
+.logo {
+    width: 60%;
+    height: auto;
+}
+
+header a {
+    flex-basis: 20em;
+}
