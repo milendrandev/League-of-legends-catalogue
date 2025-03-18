@@ -1,0 +1,15 @@
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #191c29;
+}
+
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+}
