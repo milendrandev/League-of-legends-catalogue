@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="menu">
             <Link to="/">
-                <img className="logo" src="./public/images/logo.png" alt="League Of Legends" />
+                <img className="logo" src="/public/images/logo.png" alt="League Of Legends" />
             </Link>
             <nav>
                 <ul className="list">

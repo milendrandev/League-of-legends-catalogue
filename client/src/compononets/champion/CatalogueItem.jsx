@@ -1,13 +1,14 @@
 import { Link } from "react-router"
 
 export default function CatalogueItem({
+    _id,
     title,
     coverImageUrl,
     characterImageUrl
 }) {
     return (
         <>
-            <Link to="/">
+            <Link to={`/catalogue/${_id}/details`} >
                 <div className="card">
                     <div className="wrapper">
                         <img src={coverImageUrl} className="cover-image" />

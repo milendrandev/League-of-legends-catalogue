@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import championService from "../../championService";
+import championService from "../../services/championService";
 
 export default function CreateChampion() {
 

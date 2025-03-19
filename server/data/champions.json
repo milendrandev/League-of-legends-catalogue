@@ -3,7 +3,15 @@
         "title": "Brand",
         "coverImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/brandloadscreen.jpg",
         "characterImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/images/brand_splash_tile_0.jpg",
+        "backgroundImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/skin03/images/brand_splash_uncentered_3.jpg",
         "story": "Once a tribesman of the icy Freljord named Kegan Rodhe, the creature known as Brand is a lesson in the temptation of greater power.",
         "_id": "2ebebdea-86c5-42e9-99c3-f5dce65575b9"
+    },
+    "dc03a86c-46b6-49af-902f-5bf20e802dff": {
+        "title": "Swain",
+        "coverImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/swain/skins/base/swainloadscreen.jpg",
+        "characterImageUrl": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/swain/skins/base/images/swain_splash_tile_0.jpg",
+        "story": "Born into a patrician family, one of many to exist since the first walls were raised around Noxus, Jericho Swain seemed destined for a life of privilege.",
+        "_id": "dc03a86c-46b6-49af-902f-5bf20e802dff"
     }
 }

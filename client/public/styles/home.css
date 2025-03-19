@@ -1,0 +1,8 @@
+#myVideo {
+    width: 90%;
+}
+
+.videoWrapper {
+    display: flex;
+    justify-content: center;
+}

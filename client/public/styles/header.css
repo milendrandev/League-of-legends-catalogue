@@ -1,5 +1,5 @@
 .menu {
-    margin: 1em 1em;
+    margin: 0 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .logo {
-    width: 60%;
+    width: 55%;
     height: auto;
 }
 
