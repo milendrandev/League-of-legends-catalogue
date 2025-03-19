@@ -1,9 +1,26 @@
-import { Link } from "react-router";
+import { useActionState, useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { UserContext } from "../../contexts/UserContext";
+import loginService from "../../services/loginService";
 
 export default function Login() {
+    const navigate = useNavigate()
+    const { userLoginHandler } = useContext(UserContext);
+
+    const loginHandler = async (_,formData) => {
+        const values = Object.fromEntries(formData);
+        const authData = await loginService.login(values);
+        userLoginHandler(authData);
+
+        console.log(authData);
+        navigate('/');
+    }
+
+    const [_,loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
+
     return (
         <>
-            <form>
+            <form action={loginAction}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
@@ -44,11 +61,11 @@ export default function Login() {
                         <h2>Sign In</h2>
                         <div className="form">
                             <div className="inputBox">
-                                <input type="text" required /> <i>Username</i>
+                                <input type="text" name="email" required /> <i>Username</i>
                             </div>
 
                             <div className="inputBox">
-                                <input type="password" required /> <i>Password</i>
+                                <input type="password" name="password" required /> <i>Password</i>
                             </div>
                             <div className="links"> <a href="#"></a> <Link to="/register">Signup</Link>
                             </div>
