@@ -4,7 +4,7 @@ import { UserContext } from "../../contexts/UserContext";
 import userService from "../../services/userService";
 
 export default function Login() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { userLoginHandler } = useContext(UserContext);
 
     const loginHandler = async (_, formData) => {
@@ -70,7 +70,7 @@ export default function Login() {
                             <div className="links"> <a href="#"></a> <Link to="/register">Signup</Link>
                             </div>
                             <div className="inputBox">
-                                <input type="submit" value="Login" />
+                                <input type="submit" value="Login" disabled={isPending} />
                             </div>
                         </div>
                     </div>
