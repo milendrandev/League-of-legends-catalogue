@@ -1,22 +1,22 @@
 import { useActionState, useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
-import loginService from "../../services/loginService";
+import userService from "../../services/userService";
 
 export default function Login() {
     const navigate = useNavigate()
     const { userLoginHandler } = useContext(UserContext);
 
-    const loginHandler = async (_,formData) => {
+    const loginHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
-        const authData = await loginService.login(values);
+        const authData = await userService.login(values);
         userLoginHandler(authData);
 
         console.log(authData);
         navigate('/');
     }
 
-    const [_,loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
+    const [_, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
 
     return (
         <>
