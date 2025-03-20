@@ -1,8 +1,10 @@
 .menu {
-    margin: 0 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #181818;
 }
 
 nav {
@@ -20,15 +22,19 @@ nav {
     margin-right: 1em;
 }
 
-.list li a{
+.list li a {
     color: #0f0;
 }
 
 .logo {
-    width: 55%;
+    width: 45%;
     height: auto;
 }
 
 header a {
     flex-basis: 20em;
 }
+
+nav ul a.active {
+    color:aliceblue;
+  }

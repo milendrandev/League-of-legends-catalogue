@@ -1,28 +1,41 @@
-import { Link } from 'react-router';
+import { useContext } from 'react';
+import { NavLink } from 'react-router';
+import { UserContext } from '../contexts/UserContext';
 
 export default function Header() {
+
+    const { email } = useContext(UserContext)
+
     return (
         <header className="menu">
-            <Link to="/">
+            <NavLink to="/">
                 <img className="logo" src="/public/images/logo.png" alt="League Of Legends" />
-            </Link>
+            </NavLink>
             <nav>
                 <ul className="list">
                     <li>
-                        <Link to="/catalogue">Champions Catalogue</Link>
+                        <NavLink to="/catalogue">Champions Catalogue</NavLink>
                     </li>
-                    <li>
-                        <Link to="/create-champion">Create your Champion</Link>
-                    </li>
-                    <li>
-                        <Link to="/register">Register</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/logout">Logout</Link>
-                    </li>
+                    {email
+                        ? (
+                            <>
+                                <li>
+                                    <NavLink to="/create-champion">Create your Champion</NavLink>
+                                </li><li>
+                                    <NavLink to="/logout">Logout</NavLink>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <NavLink to="/login">Login</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/register">Register</NavLink>
+                                </li>
+                            </>
+                        )
+                    }
                 </ul>
             </nav>
         </header>

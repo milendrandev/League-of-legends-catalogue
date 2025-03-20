@@ -9,6 +9,7 @@ body {
     background-image: url('https://wallpaperset.com/w/full/7/9/7/534842.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 
