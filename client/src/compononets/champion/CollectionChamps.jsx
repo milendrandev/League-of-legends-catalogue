@@ -1,16 +1,15 @@
-
+import { useContext } from "react";
 import CatalogueItem from "./CatalogueItem";
-import useFetch from "../../hooks/useFetch";
+import { CollectionContext } from "../../contexts/collectionContext";
 
-export default function AllChampionsCatalogue() {
-
-    const [champions] = useFetch();
-
+export default function CollectionChamps() {
+    const {champs} = useContext(CollectionContext)
+    console.log(champs)
     return (
         <>
             <div className='container'>
 
-                {champions.map(champ =>
+                {champs.map(champ =>
                     <CatalogueItem
                         key={champ._id}
                         {...champ}

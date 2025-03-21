@@ -1,11 +1,13 @@
 import { Link } from "react-router"
 import championService from "../../services/championService";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function CreateChampion() {
-
+    const { accessToken } = useContext(UserContext)
     const onCreate = async (formData) => {
         const data = Object.fromEntries(formData);
-        const result = await championService.create(data);
+        const result = await championService.create(data, accessToken);
         console.log(result)
         //navigate('/games');
     }
