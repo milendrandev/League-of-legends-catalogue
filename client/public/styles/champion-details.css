@@ -29,6 +29,16 @@ h1 {
     width: 50ch;
 }
 
+input[type="submit"] {
+    cursor: pointer;
+    font-size: 52px;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    background-color: #222;
+    color: #0f0;
+    margin-top: 0.5em;
+}
+
 aside {
     margin-right: 5em;
 }

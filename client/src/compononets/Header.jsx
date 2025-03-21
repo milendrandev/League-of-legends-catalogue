@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <header className="menu">
             <NavLink to="/">
-                <img className="logo" src="/public/images/logo.png" alt="League Of Legends" />
+                <img className="logo" src="/images/logo.png" alt="League Of Legends" />
             </NavLink>
             <nav>
                 <ul className="list">
@@ -21,7 +21,11 @@ export default function Header() {
                             <>
                                 <li>
                                     <NavLink to="/create-champion">Create your Champion</NavLink>
-                                </li><li>
+                                </li>
+                                <li>
+                                    <NavLink to="/collection">My Collection</NavLink>
+                                </li>
+                                <li>
                                     <NavLink to="/logout">Logout</NavLink>
                                 </li>
                             </>

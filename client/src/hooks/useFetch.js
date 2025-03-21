@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const baseUrl = 'http://localhost:3030/data/champions';
+
+const useFetch = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
 
-        fetch(url)
+        fetch(baseUrl)
             .then(res => res.json())
             .then(result => {
                 setData(Object.values(result));
             })
-    }, [url]);
+    }, [baseUrl]);
 
     return [data];
 };

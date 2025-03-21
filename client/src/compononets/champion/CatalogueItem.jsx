@@ -8,7 +8,7 @@ export default function CatalogueItem({
 }) {
     return (
         <>
-            <Link to={`/catalogue/${_id}/details`} >
+            <Link to={`/${_id}/details`} >
                 <div className="card">
                     <div className="wrapper">
                         <img src={coverImageUrl} className="cover-image" />

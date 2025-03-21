@@ -20,6 +20,7 @@ nav {
     list-style-type: none;
     font-size: 20px;
     margin-right: 1em;
+    
 }
 
 .list li a {
@@ -35,6 +36,7 @@ header a {
     flex-basis: 20em;
 }
 
-nav ul a.active {
-    color:aliceblue;
+nav li a.active {
+   color: rgb(222, 243, 222);
+   font-weight: bold;
   }
