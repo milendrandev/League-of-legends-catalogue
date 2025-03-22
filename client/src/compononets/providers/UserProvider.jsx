@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { UserContext } from "../../contexts/UserContext"
+import useSessionStorage from "../../hooks/useSessionStorage";
 export default function UserProvider({ children }) {
 
-    const [authData, setAuthData] = useState({});
+    const [authData, setAuthData] = useSessionStorage('auth',{});
 
     const userLoginHandler = (resultData) => {
         setAuthData(resultData);
