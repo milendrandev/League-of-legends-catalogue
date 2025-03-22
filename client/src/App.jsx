@@ -13,6 +13,8 @@ import DetailChampion from "./compononets/champion/DetailChampion"
 import Logout from "./compononets/Authentication/Logout"
 import CollectionChamps from "./compononets/champion/CollectionChamps"
 import { CollectionContext } from "./contexts/collectionContext"
+import AuthGuard from "./compononets/guards/Authguard"
+import GuestGuard from "./compononets/guards/GuestGuard"
 
 function App() {
   const [authData, setAuthData] = useState({});
@@ -40,13 +42,17 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/logout" element={<Logout />}></Route>
             <Route path="/catalogue" element={<AllChampionsCatalogue />}></Route>
-            <Route path="/:championId/details" element={<DetailChampion />}></Route>
-            <Route path="/collection" element={<CollectionChamps />}></Route>
-            <Route path="/create-champion" element={<CreateChampion />}></Route>
+            <Route element={<GuestGuard />}>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/register" element={<Register />}></Route>
+            </Route>
+            <Route element={<AuthGuard />}>
+              <Route path="/logout" element={<Logout />}></Route>
+              <Route path="/:championId/details" element={<DetailChampion />}></Route>
+              <Route path="/collection" element={<CollectionChamps />}></Route>
+              <Route path="/create-champion" element={<CreateChampion />}></Route>
+            </Route>
           </Routes>
         </>
       </CollectionContext.Provider>
