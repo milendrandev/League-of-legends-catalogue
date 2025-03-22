@@ -4,13 +4,17 @@ import championService from "../../services/championService";
 import { UserContext } from "../../contexts/UserContext";
 import { CollectionContext } from "../../contexts/collectionContext";
 
-export default function DetailChampion() {
+import '../../../public/styles/champion-details.css';
+
+export default function DetailChampion({ }) {
     const navigate = useNavigate();
     const { championId } = useParams();
     const [champion, setChampion] = useState({});
     const [added, setAdded] = useState(false);
-    const { accessToken } = useContext(UserContext)
+    const { accessToken, _id } = useContext(UserContext)
     const { addToCollectionHandler, champs, removeCollectionHandler } = useContext(CollectionContext)
+
+    const isOwner = champion._ownerId === _id;
 
     useEffect(() => {
         championService.getChampionById(championId)
@@ -24,6 +28,12 @@ export default function DetailChampion() {
             setAdded(false)
         }
     }, [championId]);
+
+    const onDeleteClick = async () => {
+        await championService.delete(championId, accessToken);
+        navigate('/catalogue')
+        //setChampions(state => state.filter(champ => champ._id !== champId));
+    }
 
     const onCollectClick = () => {
         if (!accessToken) {
@@ -57,12 +67,16 @@ export default function DetailChampion() {
                         <div>
                             <input type="submit" value="Remove from your Collection" onClick={onCollectClick}></input>
                         </div>}
+
+                    {isOwner && <div>
+                        <input type="submit" value="Delete" onClick={onDeleteClick}></input>
+                    </div>}
                 </main>
 
                 <aside>
                     <img src={champion.coverImageUrl} alt={champion.title} />
                 </aside>
-            </section>
+            </section >
         </>
     )
 }

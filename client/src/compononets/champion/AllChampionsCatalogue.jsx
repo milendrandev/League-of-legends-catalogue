@@ -1,4 +1,3 @@
-
 import CatalogueItem from "./CatalogueItem";
 import useFetch from "../../hooks/useFetch";
 

@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router";
 export default function GuestGuard() {
     const { accessToken } = useContext(UserContext)
 
-    if (accessToken !== undefined) {
+    if (accessToken) {
         return <Navigate to="/" />
     }
 
