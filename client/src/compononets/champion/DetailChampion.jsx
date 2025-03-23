@@ -6,6 +6,8 @@ import { CollectionContext } from "../../contexts/collectionContext";
 
 import '../../../public/styles/champion-details.css';
 
+import DeleteModal from "./DeleteModal";
+
 export default function DetailChampion({ }) {
     const navigate = useNavigate();
     const { championId } = useParams();
@@ -68,9 +70,7 @@ export default function DetailChampion({ }) {
                             <input type="submit" value="Remove from your Collection" onClick={onCollectClick}></input>
                         </div>}
 
-                    {isOwner && <div>
-                        <input type="submit" value="Delete" onClick={onDeleteClick}></input>
-                    </div>}
+                    {isOwner && <DeleteModal />}
                 </main>
 
                 <aside>
