@@ -7,15 +7,14 @@ export default function AllChampionsCatalogue() {
 
     return (
         <>
-            <div className='container'>
-
-                {champions.map(champ =>
-                    <CatalogueItem
-                        key={champ._id}
-                        {...champ}
-                    />
-                )}
-
+            <div className='card-container'>
+                
+                    {champions.map(champ =>
+                        <CatalogueItem
+                            key={champ._id}
+                            {...champ}
+                        />
+                    )}
             </div>
         </>
     )

@@ -31,7 +31,7 @@ h1 {
 
 input[type="submit"] {
     cursor: pointer;
-    font-size: 42px;
+    font-size: 32px;
     padding: 0.2em;
     border-radius: 0.5em;
     background-color: #222;
