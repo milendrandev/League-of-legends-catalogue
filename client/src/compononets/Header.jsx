@@ -28,6 +28,9 @@ export default function Header() {
                                 <li>
                                     <NavLink to="/logout">Logout</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink id="profile" to="/profile">{email}</NavLink>
+                                </li>
                             </>
                         ) : (
                             <>

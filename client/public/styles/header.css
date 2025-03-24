@@ -39,4 +39,8 @@ header a {
 nav li a.active {
    color: rgb(222, 243, 222);
    font-weight: bold;
-  }
+}
+
+#profile {
+    font-size: 14px;
+}

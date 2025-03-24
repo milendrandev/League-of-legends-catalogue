@@ -13,6 +13,7 @@ import AuthGuard from "./compononets/guards/Authguard"
 import GuestGuard from "./compononets/guards/GuestGuard"
 import UserProvider from "./compononets/providers/UserProvider"
 import MyCollectionProvider from "./compononets/providers/MyCollectionProvider"
+import Profile from "./compononets/Authentication/Profile"
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/:championId/details" element={<DetailChampion />}></Route>
               <Route path="/collection" element={<CollectionChamps />}></Route>
               <Route path="/create-champion" element={<CreateChampion />}></Route>
+              <Route path="/profile" element={<Profile />}></Route>
             </Route>
           </Routes>
         </>
