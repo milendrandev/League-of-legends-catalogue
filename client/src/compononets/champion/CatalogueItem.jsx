@@ -20,7 +20,6 @@ export default function CatalogueItem({
                     </div>
                 </Link>
                 <p className="created-by">Created by: Admin</p>
-                <RatingChampion/>
             </div>
         </>
     )

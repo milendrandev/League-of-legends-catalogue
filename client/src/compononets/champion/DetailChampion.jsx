@@ -7,6 +7,7 @@ import { CollectionContext } from "../../contexts/collectionContext";
 import '../../../public/styles/champion-details.css';
 import BuyModal from "./BuyModal";
 import DeleteModal from "./DeleteModal";
+import RatingChampion from "./RatingChampion";
 
 export default function DetailChampion({ }) {
     const navigate = useNavigate();
@@ -56,6 +57,8 @@ export default function DetailChampion({ }) {
                 <main>
                     <h1>{champion.title}</h1>
                     <p className="story">{champion.story}</p>
+                    <RatingChampion key={championId} championId={championId} />
+
                     {!isOwner && accessToken && <BuyModal />}
                     {isOwner && accessToken &&
                         <div>

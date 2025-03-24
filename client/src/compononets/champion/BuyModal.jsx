@@ -26,7 +26,7 @@ export default function BuyModal() {
 
     return (
         <React.Fragment>
-            <Button sx={{ width: '200px', margin: '1em 0' }} variant="contained" color='success' onClick={handleClickOpen}>
+            <Button sx={{ width: '200px', marginTop: '1.5em' }} variant="contained" color='success' onClick={handleClickOpen}>
                 Buy
             </Button>
             <Dialog
