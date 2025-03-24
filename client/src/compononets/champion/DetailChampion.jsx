@@ -5,7 +5,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { CollectionContext } from "../../contexts/collectionContext";
 
 import '../../../public/styles/champion-details.css';
-
+import BuyModal from "./BuyModal";
 import DeleteModal from "./DeleteModal";
 
 export default function DetailChampion({ }) {
@@ -30,12 +30,6 @@ export default function DetailChampion({ }) {
             setAdded(false)
         }
     }, [championId]);
-
-    const onDeleteClick = async () => {
-        await championService.delete(championId, accessToken);
-        navigate('/catalogue')
-        //setChampions(state => state.filter(champ => champ._id !== champId));
-    }
 
     const onCollectClick = () => {
         if (!accessToken) {
@@ -62,12 +56,10 @@ export default function DetailChampion({ }) {
                 <main>
                     <h1>{champion.title}</h1>
                     <p className="story">{champion.story}</p>
-                    {!added && accessToken && <div>
-                        <input type="submit" value="Add to your Collection" onClick={onCollectClick}></input>
-                    </div>}
-                    {added && accessToken &&
+                    {!isOwner && accessToken && <BuyModal />}
+                    {isOwner && accessToken &&
                         <div>
-                            <input type="submit" value="Remove from your Collection" onClick={onCollectClick}></input>
+                            <input type="submit" value="YOU OWN THIS CHAMPION" desabled="true"></input>
                         </div>}
 
                     {isOwner && <DeleteModal />}

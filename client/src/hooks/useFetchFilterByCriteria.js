@@ -1,16 +1,15 @@
-import { useState, useEffect, useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { useState, useEffect } from "react";
 
-const baseUrl = 'http://localhost:3030/data/collections';
+const baseUrl = 'http://localhost:3030/data/champions';
 
-const useFetchFilterByCriteria = () => {
-    const { _id } = useContext(UserContext)
+const useFetchFilterByCriteria = (criteria, value) => {
+
     const [data, setData] = useState([]);
 
     useEffect(() => {
 
         const searchParams = new URLSearchParams({
-            where: `collectorId="${_id}"`,
+            where: `${criteria}="${value}"`,
         });
 
         fetch(`${baseUrl}?${searchParams.toString()}`)
@@ -18,7 +17,7 @@ const useFetchFilterByCriteria = () => {
             .then(result => {
                 setData(Object.values(result));
             })
-    }, []);
+    }, [criteria, value]);
 
     return [data];
 };

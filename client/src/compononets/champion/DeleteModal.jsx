@@ -5,6 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import championService from '../../services/championService';
 
 export default function DeleteModal() {
   const [open, setOpen] = React.useState(false);
@@ -17,9 +18,15 @@ export default function DeleteModal() {
     setOpen(false);
   };
 
+  const onDeleteClick = async () => {
+    await championService.delete(championId, accessToken);
+    navigate('/catalogue')
+    //setChampions(state => state.filter(champ => champ._id !== champId));
+  }
+
   return (
     <React.Fragment>
-      <Button sx={{width:'200px', margin: '1em 0'}} variant="contained" color='error' onClick={handleClickOpen}>
+      <Button sx={{ width: '200px', margin: '1em 0' }} variant="contained" color='error' onClick={handleClickOpen}>
         Delete champion
       </Button>
       <Dialog
@@ -29,19 +36,13 @@ export default function DeleteModal() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {"Are you sure you want to delete your champion?"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
-          </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>
-            Agree
-          </Button>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={onDeleteClick}>Delete</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>
