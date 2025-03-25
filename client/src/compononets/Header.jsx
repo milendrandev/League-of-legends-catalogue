@@ -23,7 +23,7 @@ export default function Header() {
                                     <NavLink to="/create-champion">Create your Champion</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/collection">My Collection</NavLink>
+                                    <NavLink to="/collection">My Champions</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/logout">Logout</NavLink>

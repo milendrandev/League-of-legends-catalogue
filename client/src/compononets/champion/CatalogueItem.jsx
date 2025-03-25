@@ -10,7 +10,8 @@ export default function CatalogueItem({
     characterImageUrl
 }) {
 
-    const [data] = useFetchFilterByCriteria("championId", _id)
+    const baseUrl = 'http://localhost:3030/data/ratings';
+    const [data] = useFetchFilterByCriteria(baseUrl, "championId", _id)
     return (
         <>
             <div className="card-wrapper">

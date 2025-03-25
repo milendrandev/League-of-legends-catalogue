@@ -21,7 +21,6 @@ export default function DeleteModal() {
   const onDeleteClick = async () => {
     await championService.delete(championId, accessToken);
     navigate('/catalogue')
-    //setChampions(state => state.filter(champ => champ._id !== champId));
   }
 
   return (

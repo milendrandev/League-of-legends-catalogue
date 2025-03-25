@@ -27,11 +27,13 @@ export default function RatingChampion({ championId, data }) {
   }
 
   return (
-    <Box sx={{ '& > legend': { mt: 0.5 }, color: 'white' }}>
+    <Box sx={{ '& > legend': { mt: 1 }, color: 'white' }}>
       {!voted && data[0] === undefined &&
         <>
           <Rating
             name="simple-controlled"
+            size='large'
+            sx={{ mt: 1 }}
             value={value}
             onChange={(event) => {
               setValue(event.target.value)
@@ -53,7 +55,11 @@ export default function RatingChampion({ championId, data }) {
       }
       {voted && data[0] === undefined &&
         <>
-          <Rating name="read-only" value={value} readOnly />
+          <Rating name="read-only"
+            size='large'
+            sx={{ mt: 1 }}
+            value={value}
+            readOnly />
           <Typography component="legend" sx={{
             textAlign: 'center',
             fontWeight: 'bold',
@@ -69,7 +75,11 @@ export default function RatingChampion({ championId, data }) {
       }
       {data[0] != undefined &&
         <>
-          <Rating name="read-only" value={data[0].ratingValue} readOnly />
+          <Rating name="read-only"
+            size='large'
+            sx={{ mt: 1 }}
+            value={data[0].ratingValue}
+            readOnly />
           <Typography component="legend" sx={{
             textAlign: 'center',
             fontWeight: 'bold',

@@ -30,7 +30,10 @@ export default function RatingOverall({ data }) {
                         borderRadius: '0.3em',
                         fontSize: '22px'
                     }}>Overall Rating</Typography>
-                    <Rating name="read-only" value={avarage()} readOnly />
+                    <Rating name="read-only"
+                        value={avarage()}
+                        size='large'
+                        readOnly />
                 </Box>
                 :
                 <Box sx={{ '& > legend': { mt: 2 } }}>
@@ -43,7 +46,10 @@ export default function RatingOverall({ data }) {
                         borderRadius: '0.3em',
                         fontSize: '22px'
                     }}>No Rating</Typography>
-                    <Rating name="read-only" value={value} readOnly />
+                    <Rating name="read-only"
+                        size='large'
+                        value={value}
+                        readOnly />
                 </Box>
             }
         </>
