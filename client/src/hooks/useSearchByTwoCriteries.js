@@ -15,9 +15,9 @@ const useFetchFilterByTwo = (criteria, value, secondCriteria, secondValue) => {
         });
 
         fetch(`${baseUrl}?${searchParams.toString()}`)
-            .then(async res => await res.json())
-            .then(async result => {
-                await setData(result);
+            .then(res => res.json())
+            .then(result => {
+                setData(result);
             })
     }, []);
 

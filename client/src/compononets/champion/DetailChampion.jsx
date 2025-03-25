@@ -8,6 +8,7 @@ import '../../../public/styles/champion-details.css';
 import BuyModal from "./BuyModal";
 import DeleteModal from "./DeleteModal";
 import RatingChampion from "./RatingChampion";
+import useFetchFilterByTwo from "../../hooks/useSearchByTwoCriteries";
 
 export default function DetailChampion({ }) {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ export default function DetailChampion({ }) {
     const [added, setAdded] = useState(false);
     const { accessToken, _id } = useContext(UserContext)
     const { addToCollectionHandler, champs, removeCollectionHandler } = useContext(CollectionContext)
+    const { data } = useFetchFilterByTwo("_ownerId", _id, "championId", championId)
 
     const isOwner = champion._ownerId === _id;
 
@@ -46,7 +48,7 @@ export default function DetailChampion({ }) {
         else {
             setAdded(true)
             addToCollectionHandler(champion);
-            console.log('succses')
+            console.log('succsess')
         }
     }
 
@@ -57,7 +59,7 @@ export default function DetailChampion({ }) {
                 <main>
                     <h1>{champion.title}</h1>
                     <p className="story">{champion.story}</p>
-                    <RatingChampion key={championId} championId={championId} />
+                    <RatingChampion key={championId} championId={championId} data={data} />
 
                     {!isOwner && accessToken && <BuyModal />}
                     {isOwner && accessToken &&
