@@ -11,7 +11,7 @@ export default function MyCollectionProvider({ children }) {
 
     const removeCollectionHandler = (champId) => {
         setChamps(state => state.filter(champ => champ._id !== champId));
-    }
+    };
     return (
         <CollectionContext.Provider value={{ champs, addToCollectionHandler, removeCollectionHandler }}>
             {children}

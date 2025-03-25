@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const baseUrl = 'http://localhost:3030/data/champions';
+const baseUrl = 'http://localhost:3030/data/ratings';
 
 const useFetchFilterByCriteria = (criteria, value) => {
 
@@ -17,7 +17,7 @@ const useFetchFilterByCriteria = (criteria, value) => {
             .then(result => {
                 setData(Object.values(result));
             })
-    }, [criteria, value]);
+    }, []);
 
     return [data];
 };

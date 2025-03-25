@@ -1,5 +1,7 @@
 import { Link } from "react-router"
-import RatingChampion from "./RatingChampion"
+
+import RatingOverall from "./RatingOverall"
+import useFetchFilterByCriteria from "../../hooks/useFetchFilterByCriteria"
 
 export default function CatalogueItem({
     _id,
@@ -7,6 +9,8 @@ export default function CatalogueItem({
     coverImageUrl,
     characterImageUrl
 }) {
+
+    const [data] = useFetchFilterByCriteria("championId", _id)
     return (
         <>
             <div className="card-wrapper">
@@ -20,6 +24,7 @@ export default function CatalogueItem({
                     </div>
                 </Link>
                 <p className="created-by">Created by: Admin</p>
+                <RatingOverall key={_id} data={data} />
             </div>
         </>
     )
