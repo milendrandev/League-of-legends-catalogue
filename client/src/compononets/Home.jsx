@@ -8,7 +8,7 @@ export default function Home() {
             </div>
 
             <div className="content">
-                <section>
+                <section className="homeSection">
                     <h1>Welcome</h1>
                     <h1>To</h1>
                     <p><img id="homeLogo" src="/images/logo.png" alt="League Of Legends" /></p>
