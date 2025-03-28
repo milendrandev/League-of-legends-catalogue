@@ -7,7 +7,8 @@ export default function CatalogueItem({
     _id,
     title,
     coverImageUrl,
-    characterImageUrl
+    characterImageUrl,
+    author
 }) {
 
     const baseUrl = 'http://localhost:3030/data/ratings';
@@ -24,7 +25,7 @@ export default function CatalogueItem({
                         <img src={characterImageUrl} className="character" />
                     </div>
                 </Link>
-                <p className="created-by">Created by: Admin</p>
+                <p className="created-by">Created by: {author.username}</p>
                 <RatingOverall key={_id} data={data} />
             </div>
         </>

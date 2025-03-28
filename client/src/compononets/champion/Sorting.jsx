@@ -1,4 +1,5 @@
-import * as React from 'react';
+/* eslint-disable react/prop-types */
+//import * as React from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -19,9 +20,10 @@ export default function Sorting({ handleChange }) {
                     sx={{ color: 'white' }}
                     onChange={handleChange}
                 >
-                    <MenuItem value={10}>Name: A - Z</MenuItem>
-                    <MenuItem value={20}>Name: Z - A</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={1}>Name: A - Z</MenuItem>
+                    <MenuItem value={2}>Name: Z - A</MenuItem>
+                    <MenuItem value={3}>Newest First</MenuItem>
+                    <MenuItem value={4}>Oldest First</MenuItem>
                 </Select>
             </FormControl>
         </Box>

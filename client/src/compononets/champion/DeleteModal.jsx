@@ -6,8 +6,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import championService from '../../services/championService';
+import { useNavigate } from 'react-router';
 
-export default function DeleteModal() {
+export default function DeleteModal({ championId, accessToken }) {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

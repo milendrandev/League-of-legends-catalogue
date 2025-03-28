@@ -19,7 +19,7 @@ export default function RatingOverall({ data }) {
 
     return (
         <>
-            {data[0] !== undefined ?
+            {data[0] !== undefined && data[0] !== 404 ?
                 <Box sx={{ '& > legend': { mt: 2, mb: 1 } }}>
                     <Typography component="legend" sx={{
                         textAlign: 'center',

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -6,8 +7,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import championService from '../../services/championService';
+import { useNavigate } from 'react-router';
 
-export default function BuyModal() {
+export default function BuyModal({ champion, championId, ownerId }) {
+    const navigate = useNavigate();
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -18,9 +21,9 @@ export default function BuyModal() {
         setOpen(false);
     };
 
-    const onDeleteClick = async () => {
-        await championService.delete(championId, accessToken);
-        navigate('/catalogue')
+    const onBuyClick = async () => {
+        await championService.update(champion, championId, ownerId);
+        navigate('/collection')
         //setChampions(state => state.filter(champ => champ._id !== champId));
     }
 
@@ -45,7 +48,7 @@ export default function BuyModal() {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={onDeleteClick}>Buy</Button>
+                    <Button onClick={onBuyClick}>Buy</Button>
                 </DialogActions>
             </Dialog>
         </React.Fragment>

@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-const useFetchFilterByCriteria = (baseUrl, criteria, value) => {
-
+const useFetchWithRelations = (baseUrl) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-
         const searchParams = new URLSearchParams({
-            where: `${criteria}="${value}"`,
+            load: `author=_ownerId:users`,
         });
 
         fetch(`${baseUrl}?${searchParams.toString()}`)
@@ -15,8 +13,9 @@ const useFetchFilterByCriteria = (baseUrl, criteria, value) => {
             .then(result => {
                 setData(Object.values(result));
             });
-    }, []);
+    }, [baseUrl]);
 
-    return [data];
-};
-export default useFetchFilterByCriteria;
+    return [data]
+}
+
+export default useFetchWithRelations;

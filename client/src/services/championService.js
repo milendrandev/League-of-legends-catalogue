@@ -22,6 +22,20 @@ export default {
         return result;
     },
 
+    async update(data, championId, ownerId) {
+        const response = await fetch(`${baseUrl}/${championId}`, {
+            method: 'PATCH',
+            headers: {
+                'X-Admin': 'Admin',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ...data, _ownerId: ownerId })
+        })
+
+        const result = response.json();
+        return result;
+    },
+
     async delete(championId, accessToken) {
         const response = await fetch(`${baseUrl}/${championId}`, {
             method: "DELETE",

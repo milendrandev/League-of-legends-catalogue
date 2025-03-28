@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
-const baseUrl = 'http://localhost:3030/data/ratings';
-
-const useFetchFilterByTwo = (criteria, value, secondCriteria, secondValue) => {
+const useFetchFilterByTwo = (baseUrl, criteria, value, secondCriteria, secondValue) => {
 
     const [data, setData] = useState({});
 
@@ -19,7 +17,7 @@ const useFetchFilterByTwo = (criteria, value, secondCriteria, secondValue) => {
             .then(result => {
                 setData(result);
             })
-    }, []);
+    }, [baseUrl, criteria, value, secondCriteria, secondValue]);
 
     return { data };
 };
