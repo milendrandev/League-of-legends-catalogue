@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router"
 
 import RatingOverall from "./RatingOverall"
@@ -25,7 +26,9 @@ export default function CatalogueItem({
                         <img src={characterImageUrl} className="character" />
                     </div>
                 </Link>
-                <p className="created-by">Created by: {author.username}</p>
+                {!!author &&
+                    <p className="created-by">Created by: {author.username}</p>
+                }
                 <RatingOverall key={_id} data={data} />
             </div>
         </>

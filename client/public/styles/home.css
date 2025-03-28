@@ -1,8 +1,65 @@
 #myVideo {
-    width: 80%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
-.videoWrapper {
+.video::before {
+    display: block;
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    bottom: -1em;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.content section h1 {
+    margin: 0.5em;
+    color: #0f0;
+    opacity: 0.6;
+}
+
+#homeLogo {
+    width: 45%;
+    opacity: 0.5;
+    margin-left: 27vw;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: #222;
+}
+
+footer .contacts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+
+footer a {
+    color: #0f0;
+    text-decoration: none;
+    line-height: 2;
+}
+
+footer ul {
+    list-style: none;
 }
