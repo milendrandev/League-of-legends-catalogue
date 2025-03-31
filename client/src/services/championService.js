@@ -22,14 +22,14 @@ export default {
         return result;
     },
 
-    async update(data, championId, ownerId) {
+    async update(data, championId, accessToken) {
         const response = await fetch(`${baseUrl}/${championId}`, {
             method: 'PATCH',
             headers: {
-                'X-Admin': 'Admin',
                 'Content-Type': 'application/json',
+                'X-Authorization': accessToken
             },
-            body: JSON.stringify({ ...data, _ownerId: ownerId })
+            body: JSON.stringify({ ...data, _id: championId })
         })
 
         const result = response.json();

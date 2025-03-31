@@ -1,27 +1,29 @@
-/* eslint-disable no-unused-vars */
-import { useActionState, useContext } from "react";
-import { Link, useNavigate } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router";
+import championService from "../../services/championService";
 import { UserContext } from "../../contexts/UserContext";
-import userService from "../../services/userService";
 
-export default function Login() {
+export default function EditChampion() {
     const navigate = useNavigate();
-    const { userLoginHandler } = useContext(UserContext);
+    const [champion, setChampion] = useState({});
+    const { championId } = useParams();
+    const { accessToken } = useContext(UserContext)
 
-    const loginHandler = async (_, formData) => {
-        const values = Object.fromEntries(formData);
-        const authData = await userService.login(values);
-        userLoginHandler(authData);
+    useEffect(() => {
+        championService.getChampionById(championId)
+            .then(setChampion);
+    }, [championId]);
 
-        console.log(authData);
-        navigate('/');
+    const onUpdateAction = async (formData) => {
+        const data = Object.fromEntries(formData);
+        await championService.update(data, championId, accessToken);
+        console.log(data)
+        navigate(`/catalogue`);
     }
-
-    const [_, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
 
     return (
         <>
-            <form action={loginAction}>
+            <form action={onUpdateAction}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
@@ -59,19 +61,24 @@ export default function Login() {
 
                 <div className="signin">
                     <div className="content">
-                        <h2>Sign In</h2>
+                        <h2>Champion</h2>
                         <div className="form">
                             <div className="inputBox">
-                                <input type="text" name="email" required /> <i>Username</i>
-                            </div>
-
-                            <div className="inputBox">
-                                <input type="password" name="password" required /> <i>Password</i>
-                            </div>
-                            <div className="links"> <a href="#"></a> <Link to="/register">Signup</Link>
+                                <input type="text" name="title" required defaultValue={champion.title} /> <i>Champion Name</i>
                             </div>
                             <div className="inputBox">
-                                <input type="submit" value="Login" disabled={isPending} />
+                                <input type="text" name="coverImageUrl" required defaultValue={champion.coverImageUrl} /> <i>Cover Image Url</i>
+                            </div>
+                            <div className="inputBox">
+                                <input type="text" name="characterImageUrl" required defaultValue={champion.characterImageUrl} /> <i>Character Image Url</i>
+                            </div>
+                            <div className="inputBox">
+                                <textarea name="story" required defaultValue={champion.story} /> <i>Lore Story</i>
+                            </div>
+                            <div className="links"> <a href="#"></a> <Link to="/catalogue">Catalogue</Link>
+                            </div>
+                            <div className="inputBox">
+                                <input type="submit" value="Save" />
                             </div>
                         </div>
                     </div>

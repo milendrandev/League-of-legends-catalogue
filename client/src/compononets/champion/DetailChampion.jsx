@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import championService from "../../services/championService";
 import { UserContext } from "../../contexts/UserContext";
 
@@ -34,10 +34,10 @@ export default function DetailChampion() {
                     {!isOwner && accessToken && <BuyModal champion={champion} championId={championId} ownerId={_id} />}
 
                     {isOwner && accessToken &&
-                        <div>
-                            <input type="submit" value="You own this Champion" disabled="true"></input>
-                        </div>}
-
+                        // <div>
+                        //     <input type="submit" value="You own this Champion" disabled="true"></input>
+                        // </div>
+                        <Link to={`/${championId}/edit`} className="button">Edit</Link>}
                     {isOwner && <DeleteModal championId={championId} accessToken={accessToken} />}
 
                     <RatingChampion key={championId} championId={championId} data={data} />
