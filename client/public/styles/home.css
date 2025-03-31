@@ -39,27 +39,3 @@
     opacity: 0.5;
     margin-left: 27vw;
 }
-
-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    background-color: #222;
-}
-
-footer .contacts {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 1em;
-}
-
-footer a {
-    color: #0f0;
-    text-decoration: none;
-    line-height: 2;
-}
-
-footer ul {
-    list-style: none;
-}

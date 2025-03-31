@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    position: relative;
+    z-index: 1;
+    margin-top: 4em;
+}
+
+footer .contacts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0.5em;
+}
+
+footer a {
+    color: #0f0;
+    text-decoration: none;
+    line-height: 2;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer p {
+    text-align: end;
+    color: white;
+    margin-right: 2em;
+}

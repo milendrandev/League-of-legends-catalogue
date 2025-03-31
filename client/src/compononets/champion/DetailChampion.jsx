@@ -37,7 +37,7 @@ export default function DetailChampion() {
                         // <div>
                         //     <input type="submit" value="You own this Champion" disabled="true"></input>
                         // </div>
-                        <Link to={`/${championId}/edit`} className="button">Edit</Link>}
+                        <Link to={`/${championId}/edit`} className="edit">Edit your Champion</Link>}
                     {isOwner && <DeleteModal championId={championId} accessToken={accessToken} />}
 
                     <RatingChampion key={championId} championId={championId} data={data} />

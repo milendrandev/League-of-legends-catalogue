@@ -67,13 +67,13 @@ export default function Login() {
                         <h2>Sign In</h2>
                         <div className="form">
                             <div className="inputBox">
-                                <input type="text" name="email" required /> <i>Username</i>
+                                <input type="text" name="email" required /> <i>Email</i>
                             </div>
 
                             <div className="inputBox">
                                 <input type="password" name="password" required /> <i>Password</i>
                             </div>
-                            <div className="links"> <a href="#"></a> <Link to="/register">Signup</Link>
+                            <div className="links"> <a href="#"></a> <Link to="/register">Register</Link>
                             </div>
                             <div className="inputBox">
                                 <input type="submit" value="Login" disabled={isPending} />
