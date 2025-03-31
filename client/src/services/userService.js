@@ -21,7 +21,7 @@ export default {
 
     async logout(accessToken) {
         const response = await fetch(`${baseUrl}/logout`, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-type': 'application/json',
                 'X-Authorization': accessToken,

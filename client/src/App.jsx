@@ -15,7 +15,6 @@ import UserProvider from "./compononets/providers/UserProvider"
 import MyCollectionProvider from "./compononets/providers/MyCollectionProvider"
 import Profile from "./compononets/Authentication/Profile"
 import EditChampion from "./compononets/champion/EditChampion"
-import Footer from "./compononets/Footer"
 
 function App() {
   return (
@@ -41,7 +40,6 @@ function App() {
             </Route>
           </Routes>
 
-          <Footer />
         </>
       </MyCollectionProvider>
     </UserProvider>

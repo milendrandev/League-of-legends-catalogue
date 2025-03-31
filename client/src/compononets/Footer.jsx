@@ -11,7 +11,7 @@ export default function Footer() {
                 </ul>
                 <ul>
                     <li>
-                        <Link to="#">Ways to Watch</Link>
+                        <Link to="https://www.leagueoflegends.com/en-gb/" target="_blank">Play LOL</Link>
                     </li>
                 </ul>
                 <ul>

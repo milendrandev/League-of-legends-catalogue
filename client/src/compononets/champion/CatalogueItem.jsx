@@ -2,7 +2,7 @@
 import { Link } from "react-router"
 
 import RatingOverall from "./RatingOverall"
-import useFetchFilterByCriteria from "../../hooks/useFetchFilterByCriteria"
+import useSearchByCriteria from "../../hooks/useSearchByCriteria"
 
 export default function CatalogueItem({
     _id,
@@ -13,7 +13,7 @@ export default function CatalogueItem({
 }) {
 
     const baseUrl = 'http://localhost:3030/data/ratings';
-    const [data] = useFetchFilterByCriteria(baseUrl, "championId", _id)
+    const [data] = useSearchByCriteria(baseUrl, "championId", _id)
     return (
         <>
             <div className="card-wrapper">

@@ -6,13 +6,15 @@ import { Navigate } from "react-router";
 export default function Logout() {
     const { accessToken, userLogoutHandler } = useContext(UserContext);
     const [isLoggedout, setIsLoggedout] = useState(false);
+
     useEffect(() => {
-        if (accessToken == null)
+        if (!accessToken) {
             return;
+        }
 
         userService.logout(accessToken)
-            .then(userLogoutHandler)
-            .then(setIsLoggedout(true));
+        .finally(userLogoutHandler)
+        .finally(setIsLoggedout(true))
     }, [accessToken, userLogoutHandler])
 
     return isLoggedout

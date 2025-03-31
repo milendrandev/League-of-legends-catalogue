@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetchFilterByCriteria = (baseUrl, criteria, value) => {
+const useSearchByCriteria = (baseUrl, criteria, value) => {
 
     const [data, setData] = useState([]);
 
@@ -19,4 +19,4 @@ const useFetchFilterByCriteria = (baseUrl, criteria, value) => {
 
     return [data];
 };
-export default useFetchFilterByCriteria;
+export default useSearchByCriteria;

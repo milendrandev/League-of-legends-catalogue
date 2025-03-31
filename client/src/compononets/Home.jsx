@@ -1,3 +1,5 @@
+import Footer from "./Footer";
+
 export default function Home() {
     return (
         <>
@@ -13,8 +15,8 @@ export default function Home() {
                     <h1>To</h1>
                     <p><img id="homeLogo" src="/images/logo.png" alt="League Of Legends" /></p>
                 </section>
-
             </div>
+            <Footer />
         </>
     )
 }
