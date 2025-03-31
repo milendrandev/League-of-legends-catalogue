@@ -10,6 +10,11 @@ export default {
             body: JSON.stringify(data),
         });
 
+        if (!response.ok) {
+            const result = await response.json();
+            throw result;
+        }
+
         const result = await response.json();
         return result;
     },
@@ -24,7 +29,7 @@ export default {
         });
 
         if (response.status == 204)
-            return console.log("LOGOUT");
+            return alert("You are Logged Out!")
 
         const result = await response.json();
         return result;
@@ -38,6 +43,11 @@ export default {
             },
             body: JSON.stringify(data),
         });
+
+        if (!response.ok) {
+            const result = await response.json();
+            throw result;
+        }
 
         const result = await response.json();
         return result;

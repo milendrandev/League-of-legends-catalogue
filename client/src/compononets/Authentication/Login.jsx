@@ -10,11 +10,16 @@ export default function Login() {
 
     const loginHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
-        const authData = await userService.login(values);
-        userLoginHandler(authData);
 
-        console.log(authData);
-        navigate('/');
+        try {
+            const authData = await userService.login(values);
+            userLoginHandler(authData);
+            alert("Login Success")
+            console.log(authData)
+            navigate('/');
+        } catch (error) {
+            alert(error.message)
+        }
     }
 
     const [_, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' })

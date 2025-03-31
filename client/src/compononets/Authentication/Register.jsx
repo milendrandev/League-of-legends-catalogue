@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router";
 import userService from "../../services/userService";
 import { useActionState, useContext } from "react";
@@ -10,11 +11,15 @@ export default function Register() {
 
     const registerHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
-        const authData = await userService.register(values);
-        userLoginHandler(authData);
 
-        console.log(authData);
-        navigate('/catalogue');
+        try {
+            const authData = await userService.register(values);
+            userLoginHandler(authData);
+            alert("Successfully registred")
+            navigate('/catalogue');
+        } catch (error) {
+            alert(error.message)
+        }
     }
 
     const [_, registerAction, isPending] = useActionState(registerHandler, { email: '', password: '', username: '' })
