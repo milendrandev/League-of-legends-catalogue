@@ -1,0 +1,56 @@
+.profile {
+    min-height: 80dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-container {
+    background-color: #222;
+    border-radius: 0.5em;
+    max-width: 1100px;
+}
+
+.profileSection {
+    display: flex;
+    color: white;
+    gap: 1em;
+    margin: 2em 5em;
+}
+
+.profileMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50ch;
+}
+
+.profileSection h1 {
+    font-size: 38px;
+}
+
+.profileSection p {
+    color: rgb(152, 142, 131);
+    font-size: 14px;
+    max-width: 60ch;
+    text-align: end;
+}
+
+.profileSection .start {
+    color: white;
+    background-color: rgb(63, 142, 0);
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    margin-right: 12em;
+    text-align: center;
+}
+
+.profileAside {
+    margin-left: 3em;
+}
+
+.profileAside img {
+    border-radius: 50%;
+    width: 80%;
+}
