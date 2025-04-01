@@ -1,3 +1,5 @@
+import { Navigate } from "react-router";
+
 const baseUrl = 'http://localhost:3030/users';
 
 export default {
@@ -20,17 +22,20 @@ export default {
     },
 
     async logout(accessToken) {
+        if (!accessToken) {
+            return;
+        }
+        
         const response = await fetch(`${baseUrl}/logout`, {
             method: 'GET',
             headers: {
-                'Content-type': 'application/json',
                 'X-Authorization': accessToken,
             }
         });
 
-        if (response.status == 204)
-            return alert("You are Logged Out!")
-
+        if (response.status == 204) {
+            return;
+        }
         const result = await response.json();
         return result;
     },
@@ -48,6 +53,18 @@ export default {
             const result = await response.json();
             throw result;
         }
+
+        const result = await response.json();
+        return result;
+    },
+
+    async getUser(accessToken) {
+        const response = await fetch(`${baseUrl}/me`, {
+            headers: {
+                'Content-type': 'application/json',
+                'X-Authorization': accessToken,
+            }
+        });
 
         const result = await response.json();
         return result;

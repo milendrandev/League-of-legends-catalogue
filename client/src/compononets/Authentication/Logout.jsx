@@ -8,13 +8,12 @@ export default function Logout() {
     const [isLoggedout, setIsLoggedout] = useState(false);
 
     useEffect(() => {
-        if (!accessToken) {
-            return;
-        }
-
         userService.logout(accessToken)
-        .finally(userLogoutHandler)
-        .finally(setIsLoggedout(true))
+            .then(userLogoutHandler)
+            .finally(setIsLoggedout(true))
+
+        return alert("You are Logged Out!");
+
     }, [accessToken, userLogoutHandler])
 
     return isLoggedout
