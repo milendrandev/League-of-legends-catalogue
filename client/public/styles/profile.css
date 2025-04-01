@@ -8,8 +8,9 @@
 
 .profile-container {
     background-color: #222;
-    border-radius: 0.5em;
-    max-width: 1100px;
+    border-radius: 1em;
+    max-width: 800px;
+    min-height: 300px;
 }
 
 .profileSection {
@@ -27,30 +28,45 @@
 }
 
 .profileSection h1 {
-    font-size: 38px;
+    font-size: 34px;
 }
 
 .profileSection p {
     color: rgb(152, 142, 131);
-    font-size: 14px;
-    max-width: 60ch;
-    text-align: end;
-}
-
-.profileSection .start {
-    color: white;
-    background-color: rgb(63, 142, 0);
-    padding: 1em 2em;
-    border-radius: 0.5em;
-    margin-right: 12em;
-    text-align: center;
+    font-size: 18px;
+    margin: 0.3em 0;
 }
 
 .profileAside {
     margin-left: 3em;
 }
 
+.profileAside p {
+    text-align: end;
+}
+
 .profileAside img {
     border-radius: 50%;
-    width: 80%;
+    width: 70%;
+}
+
+.profileMain .inputBox {
+    font-size: 18px;
+    color: rgb(152, 142, 131);
+}
+
+.profileMain .inputBox label {
+    display: block;
+}
+
+.profileMain .inputBox input[type="text"] {
+    font-size: 20px;
+    background-color: #333;
+    color: rgb(239, 233, 225);
+    border: none;
+    outline: none;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+    margin: 0.3em 0;
+    cursor: default;
 }

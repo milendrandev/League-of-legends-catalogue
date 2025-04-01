@@ -6,8 +6,7 @@ export default function GuestGuard() {
     const { accessToken } = useContext(UserContext)
 
     if (accessToken) {
-        return <Navigate to="/" />
+        return <Navigate to="/profile" />
     }
-
     return <Outlet />;
 }

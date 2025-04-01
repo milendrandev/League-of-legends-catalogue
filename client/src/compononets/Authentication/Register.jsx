@@ -26,7 +26,7 @@ export default function Register() {
 
     return (
         <>
-            <form action={registerAction}>
+            <form className="formGen" action={registerAction}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
@@ -71,6 +71,9 @@ export default function Register() {
                             </div>
                             <div className="inputBox">
                                 <input type="email" name="email" required /> <i>Email</i>
+                            </div>
+                            <div className="inputBox">
+                                <input type="text" name="avatarUrl" required /> <i>Avatar Url</i>
                             </div>
                             <div className="inputBox">
                                 <input type="password" name="password" required /> <i>Password</i>

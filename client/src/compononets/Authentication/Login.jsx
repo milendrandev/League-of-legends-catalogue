@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useActionState, useContext } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 import userService from "../../services/userService";
 
 export default function Login() {
-    const navigate = useNavigate();
     const { userLoginHandler } = useContext(UserContext);
 
     const loginHandler = async (_, formData) => {
@@ -16,7 +15,7 @@ export default function Login() {
             userLoginHandler(authData);
             alert("Login Success")
             console.log(authData)
-            navigate('/');
+
         } catch (error) {
             alert(error.message)
         }
@@ -26,7 +25,7 @@ export default function Login() {
 
     return (
         <>
-            <form action={loginAction}>
+            <form className="formGen" action={loginAction}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-form {
+.formGen {
   position: absolute;
   width: 100vw;
   height: 90vh;
@@ -12,7 +12,7 @@ form {
   overflow: hidden;
 }
 
-form::before {
+.formGen::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -31,7 +31,7 @@ form::before {
   }
 }
 
-form span {
+.formGen span {
   position: relative;
   display: block;
   width: calc(6.25vw - 2px);
@@ -41,12 +41,12 @@ form span {
   transition: 1.5s;
 }
 
-form span:hover {
+.formGen span:hover {
   background: #0f0;
   transition: 0s;
 }
 
-form .signin {
+.formGen .signin {
   position: absolute;
   width: 400px;
   background: #222;
@@ -59,7 +59,7 @@ form .signin {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
 }
 
-form .signin .content {
+.formGen .signin .content {
   position: relative;
   width: 100%;
   display: flex;
@@ -69,25 +69,25 @@ form .signin .content {
   gap: 40px;
 }
 
-form .signin .content h2 {
+.formGen .signin .content h2 {
   font-size: 2em;
   color: #0f0;
   text-transform: uppercase;
 }
 
-form .signin .content .form {
+.formGen .signin .content .form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-form .signin .content .form .inputBox {
+.formGen .signin .content .form .inputBox {
   position: relative;
   width: 100%;
 }
 
-form .signin .content .form .inputBox input,
+.formGen .signin .content .form .inputBox input,
 textarea {
   position: relative;
   width: 100%;
@@ -105,7 +105,7 @@ textarea {
   resize: vertical;
 }
 
-form .signin .content .form .inputBox i {
+.formGen .signin .content .form .inputBox i {
   position: absolute;
   left: 0;
   padding: 15px 10px;
@@ -156,14 +156,14 @@ input[type="submit"]:active {
 }
 
 @media (max-width: 900px) {
-  form span {
+  .formGen span {
     width: calc(10vw - 2px);
     height: calc(10vw - 2px);
   }
 }
 
 @media (max-width: 600px) {
-  form span {
+  .formGen span {
     width: calc(20vw - 2px);
     height: calc(20vw - 2px);
   }

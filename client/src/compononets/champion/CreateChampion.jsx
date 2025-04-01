@@ -16,7 +16,7 @@ export default function CreateChampion() {
     }
     return (
         <>
-            <form action={onCreate}>
+            <form className="formGen" action={onCreate}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>

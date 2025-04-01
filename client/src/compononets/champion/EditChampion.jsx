@@ -23,7 +23,7 @@ export default function EditChampion() {
 
     return (
         <>
-            <form action={onUpdateAction}>
+            <form className="formGen" action={onUpdateAction}>
 
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
                 <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
