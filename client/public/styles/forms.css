@@ -3,7 +3,7 @@
 .formGen {
   position: absolute;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +66,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
 .formGen .signin .content h2 {
@@ -153,6 +153,11 @@ textarea {
 
 input[type="submit"]:active {
   opacity: 0.6;
+}
+
+.preview {
+  display: flex;
+  justify-content: end;
 }
 
 @media (max-width: 900px) {
