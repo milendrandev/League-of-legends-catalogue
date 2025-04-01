@@ -1,5 +1,3 @@
-import { Navigate } from "react-router";
-
 const baseUrl = 'http://localhost:3030/users';
 
 export default {
