@@ -9,7 +9,9 @@ export default function CreateChampion() {
 
     const onCreate = async (formData) => {
         const data = Object.fromEntries(formData);
-        const result = await championService.create(data, accessToken);
+
+        await championService.create(data, accessToken)
+            .then(alert("Your Champion is ready!"));
 
         navigate('/catalogue');
     }

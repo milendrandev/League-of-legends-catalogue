@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="contacts">
                 <ul>
                     <li>
-                        <Link to="#">FAQ</Link>
+                        <Link to="/faq">FAQ</Link>
                     </li>
                 </ul>
                 <ul>
@@ -16,12 +16,7 @@ export default function Footer() {
                 </ul>
                 <ul>
                     <li>
-                        <Link to="#">Terms of Use</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link to="#">Contact Us</Link>
+                        <Link to="terms-of-use">Terms of Use</Link>
                     </li>
                 </ul>
             </div>

@@ -21,9 +21,10 @@ export default function EditChampion() {
 
     const onUpdateAction = async (formData) => {
         const data = Object.fromEntries(formData);
-        await championService.update(data, championId, accessToken);
+        await championService.update(data, championId, accessToken)
+            .then(alert("Your Champion's characteristics changed!"));;
 
-        navigate(`/catalogue`);
+        navigate(`/collection`);
     }
 
     const onCoverChange = (event) => {

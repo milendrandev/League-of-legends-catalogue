@@ -15,6 +15,8 @@ import UserProvider from "./compononets/providers/UserProvider"
 import Profile from "./compononets/Authentication/Profile"
 import EditChampion from "./compononets/champion/EditChampion"
 import Footer from "./compononets/Footer"
+import Faq from "./compononets/footer-links/Faq"
+import TermsOfUse from "./compononets/footer-links/TermsOfUse"
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/catalogue" element={<AllChampionsCatalogue />}></Route>
+            <Route path="/faq" element={<Faq />}></Route>
+            <Route path="/terms-of-use" element={<TermsOfUse />}></Route>
             <Route element={<GuestGuard />}>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/register" element={<Register />}></Route>

@@ -19,7 +19,15 @@ export default function PreviewModal({ coverImage, characterImage }) {
 
     return (
         <React.Fragment>
-            <Button variant="outlined" sx={{ width: '20%', fontSize: '14px', margin: 0, padding: 0, color: '#0f0', border: 'none' }} onClick={handleClickOpen}>
+            <Button variant="outlined"
+                sx={{
+                    width: '20%',
+                    fontSize: '14px',
+                    margin: 0, padding: 0,
+                    color: '#0f0',
+                    border: 'none'
+                }}
+                onClick={handleClickOpen}>
                 Preview
             </Button>
             <Dialog
@@ -27,7 +35,7 @@ export default function PreviewModal({ coverImage, characterImage }) {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
-                sx={{color:'#222'}}
+                sx={{ color: '#222' }}
             >
                 <DialogTitle id="alert-dialog-title">
                     Image
