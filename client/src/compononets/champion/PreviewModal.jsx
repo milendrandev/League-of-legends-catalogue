@@ -30,7 +30,7 @@ export default function PreviewModal({ coverImage, characterImage }) {
                 sx={{color:'#222'}}
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                    Image
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">

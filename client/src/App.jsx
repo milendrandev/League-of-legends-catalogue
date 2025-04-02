@@ -12,14 +12,13 @@ import CollectionChamps from "./compononets/champion/CollectionChamps"
 import AuthGuard from "./compononets/guards/Authguard"
 import GuestGuard from "./compononets/guards/GuestGuard"
 import UserProvider from "./compononets/providers/UserProvider"
-import MyCollectionProvider from "./compononets/providers/MyCollectionProvider"
 import Profile from "./compononets/Authentication/Profile"
 import EditChampion from "./compononets/champion/EditChampion"
+import Footer from "./compononets/Footer"
 
 function App() {
   return (
     <UserProvider>
-      <MyCollectionProvider>
         <>
           <Header />
 
@@ -39,9 +38,7 @@ function App() {
               <Route path="/profile" element={<Profile />}></Route>
             </Route>
           </Routes>
-
         </>
-      </MyCollectionProvider>
     </UserProvider>
   )
 }

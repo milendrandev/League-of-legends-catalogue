@@ -14,17 +14,18 @@ export default function CollectionChamps() {
 
     return (
         <>
-            {data.length !== 0 ?
-                data.map(champ =>
-                    <div className='card-container'>
+            <div className='card-container'>
+                {data.length !== 0 ?
+                    data.map(champ =>
                         <CatalogueItem
                             key={champ._id}
                             {...champ}
                         />
-                    </div>
-                ) :
-                <CollectionBlank />
-            }
+                    )
+                    :
+                    <CollectionBlank />
+                }
+                </div>
         </>
     )
 }

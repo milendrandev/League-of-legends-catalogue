@@ -4,7 +4,7 @@
     gap: 2em;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 50vh;
 }
 
 .card-container-blank::before {
@@ -16,8 +16,8 @@
 }
 
 .card-blank {
-    width: 20em;
-    height: 10em;
+    width: 22em;
+    height: 12em;
     position: relative;
     display: flex;
     justify-content: center;
