@@ -11,8 +11,8 @@ export default function Home() {
 
             <div className="content">
                 <section className="homeSection">
-                    <h1>Welcome</h1>
-                    <h1>To</h1>
+                    <h1>Catalogue</h1>
+                    <h1>Of</h1>
                     <p><img id="homeLogo" src="/images/logo.png" alt="League Of Legends" /></p>
                 </section>
             </div>
