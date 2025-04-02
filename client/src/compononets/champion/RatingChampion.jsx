@@ -8,21 +8,12 @@ import { UserContext } from '../../contexts/UserContext';
 export default function RatingChampion({ championId, data }) {
   const [voted, setVoted] = React.useState(false);
   const [value, setValue] = React.useState(2);
-
-
   const { accessToken } = React.useContext(UserContext);
-
-
 
   const handleVote = (event) => {
     setVoted(true);
     if (data[0] === undefined) {
-      console.log('create')
       ratingService.create(championId, event.target.value, accessToken);
-    }
-    else {
-      console.log('update')
-      console.log(data)
     }
   }
 

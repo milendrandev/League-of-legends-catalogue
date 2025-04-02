@@ -73,7 +73,7 @@ export default function Register() {
                                 <input type="email" name="email" required /> <i>Email</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="avatarUrl" /> <i>Avatar Url</i>
+                                <input type="url" name="avatarUrl" required /> <i>Avatar Url</i>
                             </div>
                             <div className="inputBox">
                                 <input type="password" name="password" required /> <i>Password</i>

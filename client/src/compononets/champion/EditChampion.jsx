@@ -22,7 +22,7 @@ export default function EditChampion() {
     const onUpdateAction = async (formData) => {
         const data = Object.fromEntries(formData);
         await championService.update(data, championId, accessToken);
-        console.log(data)
+
         navigate(`/catalogue`);
     }
 
@@ -82,8 +82,8 @@ export default function EditChampion() {
                                 <input type="text" name="title" required defaultValue={champion.title} /> <i>Champion Name</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="coverImageUrl" required defaultValue={champion.coverImageUrl} onChange={onCoverChange} />
-                                <i>Cover Image Url</i>
+                                <input type="url" name="coverImageUrl" required defaultValue={champion.coverImageUrl} onChange={onCoverChange} />
+                                <i>Cover Image</i>
                                 {coverChanged
                                     ?
                                     <div className="preview">
@@ -95,8 +95,8 @@ export default function EditChampion() {
                                     </div>}
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="characterImageUrl" required defaultValue={champion.characterImageUrl} onChange={onCharacterChange} />
-                                <i>Character Image Url</i>
+                                <input type="url" name="characterImageUrl" required defaultValue={champion.characterImageUrl} onChange={onCharacterChange} />
+                                <i>Character Image</i>
                                 {characterChanged
                                     ?
                                     <div className="preview">

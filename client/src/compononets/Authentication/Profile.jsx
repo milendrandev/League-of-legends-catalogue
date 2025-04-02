@@ -11,7 +11,6 @@ export default function Profile() {
 
     const [champions] = useSearchByCriteria(championUrl, "_ownerId", _id)
     const [ratings] = useSearchByCriteria(ratingUrl, "_ownerId", _id)
-    console.log(avatarUrl)
 
     return (
         <>

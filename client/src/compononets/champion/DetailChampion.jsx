@@ -4,7 +4,6 @@ import championService from "../../services/championService";
 import { UserContext } from "../../contexts/UserContext";
 
 import '../../../public/styles/champion-details.css';
-import BuyModal from "./BuyModal";
 import DeleteModal from "./DeleteModal";
 import RatingChampion from "./RatingChampion";
 import useFetchFilterByTwo from "../../hooks/useSearchByTwoCriteries";
@@ -31,12 +30,7 @@ export default function DetailChampion() {
                     <h1>{champion.title}</h1>
                     <p className="story">{champion.story}</p>
 
-                    {!isOwner && accessToken && <BuyModal champion={champion} championId={championId} ownerId={_id} />}
-
                     {isOwner && accessToken &&
-                        // <div>
-                        //     <input type="submit" value="You own this Champion" disabled="true"></input>
-                        // </div>
                         <Link to={`/${championId}/edit`} className="edit">Edit your Champion</Link>}
                     {isOwner && <DeleteModal championId={championId} accessToken={accessToken} />}
 

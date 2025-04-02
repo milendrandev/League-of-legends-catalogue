@@ -10,7 +10,6 @@ export default function CreateChampion() {
     const onCreate = async (formData) => {
         const data = Object.fromEntries(formData);
         const result = await championService.create(data, accessToken);
-        console.log(result)
 
         navigate('/catalogue');
     }
@@ -60,10 +59,10 @@ export default function CreateChampion() {
                                 <input type="text" name="title" required /> <i>Champion Name</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="coverImageUrl" required /> <i>Cover Image Url</i>
+                                <input type="url" name="coverImageUrl" required /> <i>Cover Image</i>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="characterImageUrl" required /> <i>Character Image Url</i>
+                                <input type="url" name="characterImageUrl" required /> <i>Character Image</i>
                             </div>
                             <div className="inputBox">
                                 <textarea name="story" required /> <i>Lore Story</i>

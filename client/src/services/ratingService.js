@@ -14,4 +14,16 @@ export default {
         const result = await response.json();
         return result;
     },
+
+    async delete(ratingId, accessToken) {
+        const response = await fetch(`${baseUrl}/${ratingId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json',
+                'X-Authorization': accessToken
+            },
+        });
+        const result = await response.json();
+        return result;
+    }
 }

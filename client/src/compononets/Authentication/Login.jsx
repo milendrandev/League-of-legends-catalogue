@@ -14,7 +14,6 @@ export default function Login() {
             const authData = await userService.login(values);
             userLoginHandler(authData);
             alert("Login Success")
-            console.log(authData)
 
         } catch (error) {
             alert(error.message)

@@ -21,13 +21,14 @@ export default function DeleteModal({ championId, accessToken }) {
   };
 
   const onDeleteClick = async () => {
-    await championService.delete(championId, accessToken);
+    await championService.delete(championId, accessToken)
+      .then(alert("Successfull delete!"));
     navigate('/catalogue')
   }
 
   return (
     <React.Fragment>
-      <Button sx={{ width: '200px', margin:'0.5em 0' , padding: 0 }} variant="contained" color='error' onClick={handleClickOpen}>
+      <Button sx={{ width: '200px', margin: '0.5em 0', padding: 0 }} variant="contained" color='error' onClick={handleClickOpen}>
         Delete champion
       </Button>
       <Dialog

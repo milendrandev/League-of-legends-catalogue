@@ -10,7 +10,6 @@ export default function CollectionChamps() {
     const { _id } = useContext(UserContext)
     const criteria = "_ownerId";
     const [data] = useSearchByCriteria(baseUrl, criteria, _id);
-    console.log(data)
 
     return (
         <>
